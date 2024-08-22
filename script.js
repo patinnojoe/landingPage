@@ -68,3 +68,124 @@ setTimeout(showRandomToast, Math.random() * 20000 + 10000); // Between 10s and 2
 function reloadPage() {
   window.location.reload();
 }
+
+// GENERATE CARD
+
+// Sample data array containing the card information
+const cardData = [
+  {
+    amount: 'N268,200',
+    timeAgo: '1 hr ago',
+    category: 'Sports Betting',
+    email: 'g************@gmail.com',
+  },
+  {
+    amount: 'N150,000',
+    timeAgo: '2 hrs ago',
+    category: 'Sports Betting',
+    email: 'e************@yahoo.com',
+  },
+  {
+    amount: 'N302,250',
+    timeAgo: '30 mins ago',
+    category: 'Sports Betting',
+    email: 'h********@outlook.com',
+  },
+  {
+    amount: 'N52,080',
+    timeAgo: '1 day ago',
+    category: 'Sports Betting',
+    email: 'v***********@outlook.com',
+  },
+
+  {
+    amount: 'N122,00',
+    timeAgo: '5 hrs ago',
+    category: 'Sports Betting',
+    email: 'O*********@outlook.com',
+  },
+
+  {
+    amount: 'N93,500',
+    timeAgo: '1 day ago',
+    category: 'Sports Betting',
+    email: 'p**********@outlook.com',
+  },
+];
+
+// Function to create and append cards
+function generateCards() {
+  const container = document.getElementById('grandPrizeContainer');
+  container.innerHTML = ''; // Clear any existing content
+
+  cardData.forEach((data) => {
+    // Create the card element
+    const card = document.createElement('div');
+    card.className = 'leader-card shadow-sm';
+
+    // Card header
+    const header = document.createElement('header');
+    header.className = 'd-flex justify-content-between align-items-center gap-1';
+
+    const amountElement = document.createElement('h6');
+    amountElement.className = 'fw-semibold ';
+    amountElement.innerText = data.amount;
+
+    const timeElement = document.createElement('span');
+    timeElement.innerText = data.timeAgo;
+
+    header.appendChild(amountElement);
+    header.appendChild(timeElement);
+
+    // Card body
+    const body = document.createElement('div');
+    body.className = 'd-flex justify-content-between w-100';
+
+    const categoryElement = document.createElement('small');
+    categoryElement.innerText = data.category;
+
+    const emailElement = document.createElement('p');
+    emailElement.innerText = data.email;
+
+    body.appendChild(categoryElement);
+    body.appendChild(emailElement);
+
+    // Append header and body to the card
+    card.appendChild(header);
+    card.appendChild(body);
+
+    // Append card to the container
+    container.appendChild(card);
+  });
+}
+
+// Run the function to generate cards on page load
+generateCards();
+
+// share count
+let shareCount = 0;
+
+const shareBtn = document.getElementById('shareBtn');
+const progressBar = document.getElementById('progressBar');
+const progressText = document.getElementById('progressText');
+const congratulationsBtn = document.getElementById('congratulationsBtn');
+const progressBarContainer = document.querySelector('.progress-bar-container');
+
+// Event Listener for the Share Button
+shareBtn.addEventListener('click', function (event) {
+  progressBarContainer.classList.remove('d-none');
+  // Increment share count
+  shareCount++;
+
+  // Update progress bar and text
+  progressBar.value = shareCount;
+  // progressText.textContent = `${shareCount} / 5 Shares`;
+
+  // Check if the share count has reached 5
+  if (shareCount >= 5) {
+    congratulationsBtn.classList.remove('d-none');
+    shareBtn.classList.add('d-none'); // Hide the share button
+
+    window.location.reload();
+  }
+});
