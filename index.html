@@ -25,15 +25,15 @@
                 <li class="instruction-text"><span class="fw-semibold"> Share the Opportunity:</span> &nbsp; Hit the button below and share your unique link with 5 WhatsApp groups or 5 friends. It takes just a few taps, and you’re one step closer to ₦250,000</li>
                 <li class="instruction-text"><span class="fw-semibold">Create Your Betting Account:</span>&nbsp; To start betting!</li>
             </ol>
-            <small class="text-danger fw-semibold text-center d-block mb-2 mt-2">You Have Just 3 Minutes To Claim Your Gift!</small>
-            <!-- <a id="shareBtn" class="share-btn" href="https://wa.me/?text=🎉 I Just WON ₦250,000 FREE Betting Credit Now! ⚽ On All Major Premier League Games 2024! 👉 Claim Yours Here Now: https://socheck.in/₦250,000-FREE-Betting 💸 Best Part: You can instantly withdraw your betting wins to your Naira account! 💰" target="_blank">
-                Share Now!
-            </a> -->
+            <small class="text-danger fw-semibold text-center d-block mb-2 mt-2" id="infoTimeout">You Have Just 3 Minutes To Claim Your Gift!</small>
+          
             <a class="share-btn" id="shareBtn"   href="https://wa.me/?text=🎉%20I%20Just%20WON%20₦250,000%20FREE%20Betting%20Credit%20Now!%20⚽%20On%20All%20Major%20Premier%20League%20Games%202024!%0A%0A👉%20Claim%20Yours%20Here%20Now:%20https://socheck.in/₦250,000-FREE-Betting%0A%0A💸%20Best%20Part:%20You%20can%20instantly%20withdraw%20your%20betting%20wins%20to%20your%20Naira%20account!%20💰" target="_blank">
     Share Now!
 </a>
 
             <a class="d-none try-again-btn" id="congratulationsBtn" class="try-again-btn" href="https://www.highratecpm.com/dkuf4ihhd?key=bebd603576e569c66abf4b98a6f00ad5" target="_blank">Congratulations! Claim Now</a>
+
+              <button class="d-none try-again-btn" id="tryAgain" class="try-again-btn"  onclick="reloadPage()">Time out, Try Again!</button>
              <!-- Progress Bar -->
                 <div class="progress-bar-container d-none">
                     <progress id="progressBar" value="0" max="5"></progress>
@@ -51,13 +51,17 @@
         <img src="/banner-win2.jpg" alt="" class="image d-md-none">
          <img src="/banner.jpg" alt="" class="image d-md-block d-none">
      </div>
+
+
      <header class="header-container">
-        <h1 class="header-text">Claim Your ₦250,000 FREE Credit to Bet on 2024 Premier League Games.</h1> 
-      <div>
+        <h1 class="header-text">Claim Your ₦250,000 FREE Credit to Bet on 2024 Premier League Games - In Less Than 5 Minutes Flat</h1> 
+        <h6 class="text-center">And Withdraw Your Wins Straight To Your Naira Account</h6>
+      <div class="survey-group">
           <small class="header-subText  d-block">Do You Normally Play Bets? Would You Like To Claim Your Full <span class="fw-bold">₦250,000 </span> FREE Credit?</small>
+            <!-- CTA -->
+           <button class="get-credit-cta" onclick="launchConfetti()"><span class="breathe">»</span> Yes, Claim Credit <span class="breathe">«</span> </button>
       </div>
-        <!-- CTA -->
-      <button class="get-credit-cta" onclick="launchConfetti()"><span class="breathe">»</span> Yes, Claim Credit <span class="breathe">«</span> </button>
+      
      </header>
 
 
@@ -132,20 +136,6 @@
 <div class="grand_prize_winner">
     <h3 class="header_text">Grand Prize Winners</h3>
 
-    <!-- <div class="grandPrize_container">
-        <div class="leader-card shadow-sm">
-            <header class="d-flex justify-content-between align-items-center">
-                <h6 class="fw-semibold"> N268,000 </h6>
-                <span>1 hr ago</span>
-            </header>
-            <div class="d-flex justify-content-between w-100">
-                <p>Sports Betting</p>
-                <p>g******@gmail.com</p>
-
-            </div>
-        </div>
-    </div> -->
-
     <div class="grandPrize_container d-flex flex-column gap-3" id="grandPrizeContainer">
        
     </div>
@@ -175,6 +165,7 @@
             // show modal
             let modal = document.querySelector('#congratulationsModal');
             modal.classList.add('active')
+            startCountdown()
         }
     </script>
     <script src="script.js"></script>

@@ -17,11 +17,16 @@ function updateCountdown() {
     document.querySelector('small').style.display = 'none';
     document.querySelector('.share-btn').style.display = 'none';
     document.querySelector('#instruction').style.display = 'none';
-    document.querySelector('.try-again-btn').classList.remove('d-none');
+    document.querySelector('#congratulationsBtn').style.display = 'none';
+    document.querySelector('#infoTimeout').textContent = 'Time out!, click the button to try again';
+    document.querySelector('#tryAgain').classList.remove('d-none');
   }
 }
 
-const countdownInterval = setInterval(updateCountdown, 1000);
+// const countdownInterval = setInterval(updateCountdown, 1000);
+function startCountdown() {
+  countdownInterval = setInterval(updateCountdown, 1000);
+}
 
 // TOAST
 
