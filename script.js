@@ -184,13 +184,10 @@ shareBtn.addEventListener('click', function (event) {
 
   // Update progress bar and text
   progressBar.value = shareCount;
-  // progressText.textContent = `${shareCount} / 5 Shares`;
 
   // Check if the share count has reached 5
   if (shareCount >= 5) {
     congratulationsBtn.classList.remove('d-none');
     shareBtn.classList.add('d-none'); // Hide the share button
-
-    window.location.reload();
   }
 });
