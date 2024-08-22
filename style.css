@@ -19,18 +19,18 @@
 /* Toast Notification Styles */
 #toast {
   visibility: hidden;
-  min-width: 250px;
-  margin-left: -125px;
+  width: 300px;
+  margin-left: -130px;
   background-color: #fdfdfd;
   color: #173c2e;
   text-align: center;
-  border-radius: 5px;
-  padding: 16px;
+  border-radius: 10px;
+  padding: 1rem;
   position: fixed;
   z-index: 99;
   left: 50%;
   bottom: 30px;
-  font-size: 17px;
+  font-size: 15px;
   opacity: 0;
   transition: opacity 0.5s ease-in-out, visibility 0.5s;
   font-weight: 600;
@@ -90,12 +90,18 @@ body {
   gap: 1rem;
 }
 .header-container .header-text {
-  font-size: 2rem;
+  font-size: 1.8rem;
+  font-weight: bold;
   text-align: center;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.header-text .fnt-bigger {
+  font-size: 2.2rem;
 }
 .header-container .header-subText {
   text-align: center;
-  font-size: 16px;
+  font-size: 15px;
 }
 .get-credit-cta {
   border: none;
@@ -120,7 +126,11 @@ body {
   font-size: 1.2rem;
   padding: 0 1rem;
 }
-
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  width: 1rem !important;
+  height: 1rem !important;
+}
 .testimonials {
   background-color: #add4ba;
   border-radius: 10px;
