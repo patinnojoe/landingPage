@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+:root {
+  --primary100: #d4f2f1;
+  --primary200: #a6e3e2;
+  --primary300: #a0e7a9;
+  --primary400: #79d6c1;
+  --primary500: #8ea39c;
+  --primary700: #173c2e;
+  --primary800: #17be4d;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box;
+  /* font-family: 'Poppins'; */
+}
+/* Toast Notification Styles */
+#toast {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #fdfdfd;
+  color: #173c2e;
+  text-align: center;
+  border-radius: 5px;
+  padding: 16px;
+  position: fixed;
+  z-index: 99;
+  left: 50%;
+  bottom: 30px;
+  font-size: 17px;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out, visibility 0.5s;
+  font-weight: 600;
+}
+
+#toast.show {
+  visibility: visible;
+  opacity: 1;
+}
+.timer {
+  display: flex;
+  justify-content: center;
+  font-weight: 600;
+  background: #f36363;
+  width: 3.5rem;
+  border-radius: 50%;
+  height: 3.5rem;
+  align-items: center;
+  color: #fff;
+}
+
+body {
+  background: linear-gradient(90deg, var(--primary700) 0%, var(--primary700) 100%);
+  /* background: linear-gradient(90deg, #320000 0%, #2e0000 100%); */
+}
+.image {
+  width: 100%;
+}
+.fw-semibold {
+  font-weight: 600;
+}
+.share-btn {
+  background-color: #234928;
+  padding: 1rem;
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+  color: #fff;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-align: center;
+  transition: 0.3s;
+}
+.share-btn:hover {
+  color: #fff;
+  background-color: #173b1c;
+  transform: translateY(0.4rem);
+}
+.header-container {
+  padding: 0.5rem;
+  color: #fff4f4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.header-container .header-text {
+  font-size: 2rem;
+  text-align: center;
+}
+.header-container .header-subText {
+  text-align: center;
+  font-size: 16px;
+}
+.get-credit-cta {
+  border: none;
+  background-color: #fff;
+  border-radius: 10px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #173c2e;
+  padding: 1rem;
+  outline: none;
+  margin-top: 1rem;
+  transition: 0.3s;
+}
+.get-credit-cta:hover {
+  transform: translateY(0.5rem);
+  background-color: #e2f1d6;
+}
+.testimonial-header {
+  color: #fff4f4;
+  text-align: center;
+  margin-top: 4rem;
+  font-size: 1.2rem;
+  padding: 0 1rem;
+}
+
+.testimonials {
+  background-color: #add4ba;
+  border-radius: 10px;
+  padding: 1rem 2rem;
+  height: 13rem;
+  margin: 1rem;
+  transition: 0.3s;
+}
+footer .footer-text {
+  color: #d3ebe2;
+}
+
+.__modal_overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(13, 101, 243, 0.2);
+  backdrop-filter: blur(5.5px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s;
+  z-index: 99;
+}
+.__modal_overlay .__modal_inner {
+  width: 90%;
+  border-radius: 0.9375rem;
+  height: auto;
+  overflow-y: auto;
+  background-color: #fff;
+  animation: scaleDown 0.3s;
+  z-index: 100;
+}
+.__modal_overlay.active {
+  display: flex;
+}
+.congratulations_inner {
+  padding: 2rem 1rem;
+}
+.congratulations_inner .header-text {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+.congratulations_inner .header-subText {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.try-again-btn {
+  outline: none;
+  border: none;
+  background: #487ba7;
+  color: #fff;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 10px;
+  font-weight: 500;
+}
+
+.congratulations_inner .instruction-text {
+  font-size: 0.8rem;
+}
+.breathe {
+  font-size: 2rem;
+  animation: pointInOut 2s infinite ease-in-out;
+}
+@keyframes pointInOut {
+  0% {
+    transform: translateX(-50%) translateY(-30px);
+    opacity: 0;
+  }
+  30% {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+  60% {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-50%) translateY(-30px);
+    opacity: 0;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .header-container .header-text {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-top: 1rem;
+  }
+  .__modal_overlay .__modal_inner {
+    width: 50% !important;
+  }
+  #toast {
+    right: 0;
+    margin-right: 2rem;
+  }
+  #carouselExampleCaptions.carousel {
+    width: 70%;
+    margin: 0 auto;
+    display: block;
+  }
+  .testimonials blockquote {
+    width: 80%;
+    margin: 4rem auto;
+  }
+}
