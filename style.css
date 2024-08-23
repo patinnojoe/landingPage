@@ -130,7 +130,9 @@ body {
 }
 .header-container .header-subText {
   text-align: center;
-  font-size: 15px;
+  font-size: 20px;
+  color: #ff5f5f;
+  font-weight: 500;
 }
 .get-credit-cta {
   border: none;
