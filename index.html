@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<!-- modal -->
+
  <!-- modal -->
 <div class="__modal_overlay" id="congratulationsModal">
     <div class="__modal_inner">
@@ -42,6 +42,24 @@
     </div>
 </div>
 
+<div class="__modal_overlay" id="errorModal">
+    <div class="__modal_inner">
+        <div class="congratulations_inner">
+            <div class="w-100 d-flex align-items-center justify-content-center">
+              
+               
+            </div>
+            <h1 class="text-center header-text">
+                <span class="fnt-bigger">Ooops!</span><br> You Didnt qualify for <span> #250,000 Free Credit</span> 
+            </h1>
+            <p class="text-center header-subText">You must click yes <span class="fw-bold">to get ₦250,000 FREE Credit</span></p>
+          
+              <button class=" try-again-btn" id="tryAgain" class="try-again-btn"  onclick="reloadPage()">Try Again!</button>
+           
+        </div>
+    </div>
+</div>
+
 
  <!-- toast -->
   <div id="toast" class="shadow-sm"></div>
@@ -60,6 +78,8 @@
           <small class="header-subText  d-block">Do You Normally Play Bets? Would You Like To Claim Your Full <span class="fw-bold">₦250,000 </span> FREE Credit?</small>
             <!-- CTA -->
            <button class="get-credit-cta" onclick="launchConfetti()"><span class="breathe">»</span> Yes, Claim Credit <span class="breathe">«</span> </button>
+
+            <button class="get-credit-cta bg-danger text-white" onclick="errorModal()">No</button>
       </div>
       
      </header>

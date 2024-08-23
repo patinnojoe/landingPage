@@ -46,6 +46,19 @@ const users = [
   'Philip',
   'Ben .K',
   'Lawson Ayo',
+  'Abisoye Mukaram',
+  ' Johnson Sylvester',
+  ' Tope Sarah',
+  ' Kayode',
+  ' Chukwu Olubukola',
+  ' Okunola',
+  'Denladi',
+  'Gboyega  Mustapha',
+  'Kabiru  Musa',
+  'Kunle ',
+  'Ebube Gods-Power',
+  'Deji ',
+  'John-guy',
 ];
 
 // Function to show the toast notification
@@ -191,3 +204,8 @@ shareBtn.addEventListener('click', function (event) {
     shareBtn.classList.add('d-none'); // Hide the share button
   }
 });
+function errorModal() {
+  let modal = document.querySelector('#errorModal');
+  console.log(modal);
+  modal.classList.add('active');
+}
