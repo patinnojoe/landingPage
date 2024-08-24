@@ -131,7 +131,8 @@ body {
 .header-container .header-subText {
   text-align: center;
   font-size: 20px;
-  color: #ff5f5f;
+  /* color: #ff5f5f; */
+  color: #d5caca;
   font-weight: 500;
 }
 .get-credit-cta {
